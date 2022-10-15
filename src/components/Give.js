@@ -12,8 +12,9 @@ export default function Give() {
       let quiz = content[i];
       console.log(quiz)
       if (quiz[0] == id) {
+        alert("alok is good boy ")
         let title = quiz[1]
-        let question     
+           
       }
       if (i == content.length - 1) {
         alert("wrong quiz id ");

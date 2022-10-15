@@ -1,19 +1,22 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 export default function Preview() {
   // here we are going to fetch quiz by localStorage
 
   let showQuiz = () => {
     let val = localStorage.getItem("Quizes");
-    val = JSON.parse(val);
     let id = localStorage.getItem("QuizId");
-    console.log(val);
+    val = JSON.parse(val);
+    id = JSON.parse(id);
+
     let quizid;
     let quiztitle;
     let quizz;
 
     for (let i = 0; i < val.length; i++) {
       let check = val[i];
+
       if (check[0] == id) {
         console.log(check);
 
@@ -41,14 +44,12 @@ export default function Preview() {
                  
 
       <div className="container">
-      <h1 className="text-center">
-   ${quiztitle}
-      </h1>
+    
       <br />
       <p>
         <b>
           
-         Question ${x+1}
+         Question ${x + 1}
            - ${currentQuestion}
         </b>
       </p>
@@ -108,7 +109,6 @@ export default function Preview() {
       `;
       setQuestionCount(x + 1);
     }
-    console.log(alok);
     let main = document.getElementById("preview");
     main.innerHTML = alok;
     setcontent(alok);
@@ -120,14 +120,42 @@ export default function Preview() {
   const [title, settitle] = useState();
   const [qid, setqid] = useState();
   const [QuestionCount, setQuestionCount] = useState();
+
+  // here is finish function to finish to add question
+
+  let finish = () => {
+    alert("You Have Successfully Created Test");
+  };
+
   return (
     <div>
-      <button className="btn btn-success my-3" onClick={showQuiz}>
-        Show Quiz
-      </button>
-      <p className="quizid">{qid}</p>
-    
-      <div id="preview"></div>
+      <div className="text-center buttons">
+        <button className="btn btn-success my-3" onClick={showQuiz}>
+          Show Quiz
+        </button>
+        <Link to="/Addquestion">
+          <button className="btn btn-primary mx-2">Add more Question </button>
+        </Link>
+
+        <Link to="/">
+          <button className="btn btn-primary mx-2" onClick={finish}>
+            Finish Test
+          </button>
+        </Link>
+      </div>
+
+      <div className="ShowQuiz">
+        <h1 className="text-center">{title}</h1>
+        <p className="quizid text-center">
+          <b> Quiz id - {qid}</b>
+        </p>
+        <div id="preview" className="container"></div>
+        <br />
+        <br /> <br />
+        <br /> <br />
+        <br /> <br />
+        <br />
+      </div>
     </div>
   );
 }

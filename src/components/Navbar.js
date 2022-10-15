@@ -54,7 +54,7 @@ export default function Navbar(props) {
                 placeholder="Search"
                 aria-label="Search"
               />
-              <button className="btn btn-outline-success" type="submit">
+              <button className="btn btn-success" type="submit">
                 Search
               </button>
             </form>

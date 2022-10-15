@@ -1,5 +1,4 @@
 import React, { createRef, useState } from "react";
-// import { json, Link } from "react-router-dom";
 import "./Addquestion.css";
 import { Link } from "react-router-dom";
 export default function Addquestion() {
@@ -9,6 +8,8 @@ export default function Addquestion() {
     navigator.clipboard.writeText(alok);
     alert(" QuizId has been copied to clipboard");
   }
+
+  // here we fire OnChange event to fecth input value
 
   let onchangeQuestion = (event) => {
     setquestion(event.target.value);
@@ -30,8 +31,9 @@ export default function Addquestion() {
     setoptionD(event.target.value);
   };
 
-  const [question, setquestion] = useState();
+  // here we creat states to handle input data
 
+  const [question, setquestion] = useState();
   const [optionA, setoptionA] = useState();
   const [optionB, setoptionB] = useState();
   const [optionC, setoptionC] = useState();
@@ -54,6 +56,7 @@ export default function Addquestion() {
       alert("Input field  should not be empty ");
     } else {
       event.preventDefault();
+      let QuestionCount;
       // now we creat object of question and option
 
       let questionx = {
@@ -64,26 +67,35 @@ export default function Addquestion() {
         OptionD: optionD,
       };
 
-      // here we creat Quizarray
-
-      // here we call random function to collect an random id for quiz id
+      // now we are going to fetch quiz id and quiz array to add question and option on that array
 
       let quizid = localStorage.getItem("QuizId");
-      let details = localStorage.getItem("Quizes");
+      let details = localStorage.getItem("Quizes"); // here we pull all data of all quizzes in details var.
       details = JSON.parse(details);
+
+      // now we target specific index of array where is quiz title
+
       for (let i = 0; i < details.length; i++) {
         let target = details[i];
         let check = target[0];
         check = String(check);
 
         if (check == quizid) {
-          target[2].push(questionx);
+          // if check == quizid it means we found that array
+          target[2].push(questionx); // here we push quistionx object
+
+          // now we update that specific array in localstorage
           localStorage.setItem("Quizes", JSON.stringify(details));
+
+          // now we count the question
+
+          QuestionCount = target[2].length;
         }
       }
+
       // show alert that question added success fully
 
-      alert(" Question Added Successfully ");
+      alert("Question No- " + QuestionCount + " Added Successfully");
 
       // here we are going to clear input field from here
 
@@ -103,6 +115,12 @@ export default function Addquestion() {
       questionN.value = " ";
     }
   }
+
+  // here is finish function to finish to add question
+
+  let finish = () => {
+    alert("You Have Successfully Created Test");
+  };
 
   return (
     <>
@@ -201,11 +219,19 @@ export default function Addquestion() {
           {" "}
           Add Question
         </button>
-      
-       <Link to="/Preview">Preview</Link>
 
-        <button className="btn btn-primary mx-2"> Finish </button>
+        <Link to="/Preview">
+          <button className="btn btn-primary mx-2">Preview</button>
+        </Link>
+
+        <Link to="/">
+          <button className="btn btn-primary mx-2" onClick={finish}>
+            Finish
+          </button>
+        </Link>
       </div>
+      <br />
+      <br /> <br /><br /><br />
     </>
   );
 }

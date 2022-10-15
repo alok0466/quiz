@@ -88,25 +88,19 @@ console.log(" name is don ")
         />
 
         <br />
-        <button id="creat quiz ">
+    
        
 
-       <Link
-            to="/Addquestion"
-            className="btn btn-primary container"
-            aria-current="page"
-            onClick={AddTitle}
-       
-            >
-               Creat Quiz
+       <Link to="/Addquestion">
+             <button   onClick={AddTitle} className= " btn btn-success"> Add Title </button>
             </Link>
 
   
-        </button>
-
+   
      
 
-        <div className="Preview">
+        <div>
+          <br />
           <h3>Preview</h3>
           <p>{Title}</p>
         </div>

@@ -15,6 +15,8 @@ import Pra from './components/Pra';
 import Ak from './components/Ak' 
 import Preview from './components/Preview';
 import Give from './components/Give';
+import LoadQuestion from './components/LoadQuestion';
+import LoadTest from './components/LoadTest';
 
 function App() {
   return (
@@ -39,8 +41,10 @@ function App() {
       <Route path='/Addquestion' element={  <Addquestion></Addquestion>}></Route>
       <Route path='/Preview' element={  <Preview></Preview>}></Route>
       <Route path='/Give' element={  <Give></Give>}></Route>
-      
+      <Route path='/LoadQuestion' element={<LoadQuestion></LoadQuestion>}></Route>
+      <Route path='/LoadTest' element={<LoadTest></LoadTest>}>alsdjflak;sf</Route>
     </Routes>
+    
   </BrowserRouter>
 
 

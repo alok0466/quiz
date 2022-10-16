@@ -12,49 +12,39 @@ export default function X() {
   }
 
   function AddTitle() {
-console.log(" name is don ")
-   
-      let title = Title;
 
-      let QuizId = random();
-    console.log(QuizId);
-      console.log(" name is don ")
 
-      let id = localStorage.getItem("QuizId");
-      if (id == null) {
-        localStorage.setItem("QuizId", JSON.stringify(QuizId));
-        console.log(" name is don ")
+    let title = Title;
 
-      } else {
-        console.log(" name is don ")
+    let QuizId = random();
+  
 
-        id = JSON.parse(id);
-        id = QuizId;
-        localStorage.setItem("QuizId", JSON.stringify(id));
-        console.log(" name is don ")
-
-      }
-      console.log(" name is don ")
-
-      let details = localStorage.getItem("Quizes");
-      let questionarray = [];
-      console.log(" name is don ")
-
-      if (details == null) {
-        console.log(" name is don ")
-        let mainarray = [];
-        localStorage.setItem("Quizes", JSON.stringify(mainarray));
-      } else {
-        console.log(" name is don ")
-
-        details = JSON.parse(details);
-        let subQuiz = [QuizId, title, questionarray];
-        details.push(subQuiz);
-        localStorage.setItem("Quizes", JSON.stringify(details));
-      }
-
-      alert("Quiz Title Added Successfully");
+    let id = localStorage.getItem("QuizId");
+    if (id == null) {
+      localStorage.setItem("QuizId", JSON.stringify(QuizId));
+    } else {
+      id = JSON.parse(id);
+      id = QuizId;
+      localStorage.setItem("QuizId", JSON.stringify(id));
+    }
     
+
+    let details = localStorage.getItem("Quizes");
+    let questionarray = [];
+   
+
+    if (details == null) {
+      let mainarray = [];
+      localStorage.setItem("Quizes", JSON.stringify(mainarray));
+    } else {
+ 
+      details = JSON.parse(details);
+      let subQuiz = [QuizId, title, questionarray];
+      details.push(subQuiz);
+      localStorage.setItem("Quizes", JSON.stringify(details));
+    }
+
+    alert("Quiz Title Added Successfully");
   }
 
   const [Title, setTitle] = useState();
@@ -88,16 +78,13 @@ console.log(" name is don ")
         />
 
         <br />
-    
-       
 
-       <Link to="/Addquestion">
-             <button   onClick={AddTitle} className= " btn btn-success"> Add Title </button>
-            </Link>
-
-  
-   
-     
+        <Link to="/Addquestion">
+          <button onClick={AddTitle} className=" btn btn-success">
+            {" "}
+            Add Title{" "}
+          </button>
+        </Link>
 
         <div>
           <br />

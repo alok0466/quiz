@@ -5,7 +5,7 @@ export default function Addquestion() {
   // here we copy quiz id
 
   function copyid() {
-    navigator.clipboard.writeText(alok);
+    navigator.clipboard.writeText();
     alert(" QuizId has been copied to clipboard");
   }
 
@@ -39,7 +39,7 @@ export default function Addquestion() {
   const [optionC, setoptionC] = useState();
   const [optionD, setoptionD] = useState();
 
-  const [alok, setalok] = useState(localStorage.getItem("QuizId"));
+  // const [alok, setalok] = useState(localStorage.getItem("QuizId"));
 
   // HERE WE CREAT OBJECT AND SET INTO LOCALSTORAGE THOSE QUESTIONS
 
@@ -66,6 +66,9 @@ export default function Addquestion() {
         OptionC: optionC,
         OptionD: optionD,
       };
+
+ 
+
 
       // now we are going to fetch quiz id and quiz array to add question and option on that array
 
@@ -138,7 +141,7 @@ export default function Addquestion() {
         <br />
         <div className="alert">
           <div class="alert alert-success" role="alert">
-            <h5> Quiz id - {alok}</h5>
+            <h5> Quiz id - {}</h5>
             <p>
               Remember Your Quiz id for furthere refrence and find your quiz in
               searchbox{" "}

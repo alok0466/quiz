@@ -18,8 +18,7 @@ export default function Preview() {
       let check = val[i];
 
       if (check[0] == id) {
-        console.log(check);
-
+  
         quizid = check[0];
         quiztitle = check[1];
         quizz = check[2];
@@ -27,7 +26,7 @@ export default function Preview() {
         break;
       }
     }
-    console.log(quizz);
+ 
     let alok = "";
     let QuestionCount;
 
@@ -107,6 +106,7 @@ export default function Preview() {
     
     
       `;
+      
       setQuestionCount(x + 1);
     }
     let main = document.getElementById("preview");

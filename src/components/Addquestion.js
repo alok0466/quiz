@@ -31,22 +31,15 @@ export default function Addquestion() {
     setoptionD(event.target.value);
   };
 
-  // Here we are going to take value of checked rario button as correct Answer 
-
-  let A = document.getElementById("inlineRadio1")
-  let B = document.getElementById("inlineRadio2")
-  let C = document.getElementById("inlineRadio3")
-  let D = document.getElementById("inlineRadio4")
-
-  
   // here we creat states to handle input data
- 
+
   const [question, setquestion] = useState();
   const [optionA, setoptionA] = useState();
   const [optionB, setoptionB] = useState();
   const [optionC, setoptionC] = useState();
   const [optionD, setoptionD] = useState();
-  const[CorrectAns, setCorrectAns] = useState();
+  const [CorrectAns, setCorrectAns] = useState();
+
 
   // const [alok, setalok] = useState(localStorage.getItem("QuizId"));
 
@@ -65,34 +58,29 @@ export default function Addquestion() {
       alert("Input field  should not be empty ");
     } else {
       event.preventDefault();
+      // Here we are going to take value of checked rario button as correct Answer
 
-      let correctAnswer = 0  ; // here we store the value of checked radio button 
-      // here we will store the value and should be happebn and done with the dependenceia to do that value 
-        if ( A.checked)
-        {
-          alert("a")
-          correctAnswer = A.value;
-        }
-        else if ( B.checked)
-        {
-          alert("b")
-          correctAnswer = B.value;
-        }
-        else if (C.checked)
-        {
-          alert("c")
-          correctAnswer = C.value;
-        }
-        else if ( D.checked)
-        {
-          alert("d")
-          correctAnswer = D.value;
-        }
-      
-       
-      setCorrectAns(correctAnswer)
+      let A = document.getElementById("inlineRadio1");
+      let B = document.getElementById("inlineRadio2");
+      let C = document.getElementById("inlineRadio3");
+      let D = document.getElementById("inlineRadio4");
 
-
+      let correctAnswer = 0; // here we store the value of checked radio button
+      // here we will store the value and should be happebn and done with the dependenceia to do that value
+      if (A.checked) {
+        alert("a");
+        correctAnswer = A.value;
+      } else if (B.checked) {
+        alert("b");
+        correctAnswer = B.value;
+      } else if (C.checked) {
+        alert("c");
+        correctAnswer = C.value;
+      } else if (D.checked) {
+        alert("d");
+        correctAnswer = D.value;
+      }
+      setCorrectAns(correctAnswer);
 
       let QuestionCount;
       // now we creat object of question and option
@@ -103,7 +91,7 @@ export default function Addquestion() {
         OptionB: optionB,
         OptionC: optionC,
         OptionD: optionD,
-        Answer : CorrectAns,
+        Answer: correctAnswer,
       };
 
       // now we are going to fetch quiz id and quiz array to add question and option on that array

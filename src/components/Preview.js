@@ -38,6 +38,7 @@ export default function Preview() {
       let optionB = currentItem.OptionB;
       let optionC = currentItem.OptionC;
       let optionD = currentItem.OptionD;
+      let Ans = currentItem.Answer;
 
       alok += `
                  
@@ -98,6 +99,8 @@ export default function Preview() {
           <label className="form-check-label" htmlFor="flexRadioDefault2">
           ${optionD}
           </label>
+
+          <h6> Correct Answer - ${Ans} </h6>
         </div>
 
       

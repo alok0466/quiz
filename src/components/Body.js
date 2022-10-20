@@ -23,7 +23,7 @@ export default function Body() {
 <button className="btn btn-primary container"  id='creat quiz '>
 <Link to="/Creat" class="nav-link active" aria-current="page">
                   {" "}
-                Creat Quiz
+                Create Quiz
                 </Link>
 </button>
 <br />

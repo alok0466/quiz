@@ -12,6 +12,11 @@ export default function LoadQuestion() {
       console.log(check);
       if (check[0] == QuizId) {
         localStorage.setItem("CurrentQuiz", JSON.stringify(check));
+
+        // Here we are going to set question count key value pair in localstorage 
+
+        localStorage.setItem("count",JSON.stringify(1));
+
       }
     }
   }

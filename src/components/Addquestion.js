@@ -31,13 +31,22 @@ export default function Addquestion() {
     setoptionD(event.target.value);
   };
 
-  // here we creat states to handle input data
+  // Here we are going to take value of checked rario button as correct Answer 
 
+  let A = document.getElementById("inlineRadio1")
+  let B = document.getElementById("inlineRadio2")
+  let C = document.getElementById("inlineRadio3")
+  let D = document.getElementById("inlineRadio4")
+
+  
+  // here we creat states to handle input data
+ 
   const [question, setquestion] = useState();
   const [optionA, setoptionA] = useState();
   const [optionB, setoptionB] = useState();
   const [optionC, setoptionC] = useState();
   const [optionD, setoptionD] = useState();
+  const[CorrectAns, setCorrectAns] = useState();
 
   // const [alok, setalok] = useState(localStorage.getItem("QuizId"));
 
@@ -56,6 +65,35 @@ export default function Addquestion() {
       alert("Input field  should not be empty ");
     } else {
       event.preventDefault();
+
+      let correctAnswer = 0  ; // here we store the value of checked radio button 
+      // here we will store the value and should be happebn and done with the dependenceia to do that value 
+        if ( A.checked)
+        {
+          alert("a")
+          correctAnswer = A.value;
+        }
+        else if ( B.checked)
+        {
+          alert("b")
+          correctAnswer = B.value;
+        }
+        else if (C.checked)
+        {
+          alert("c")
+          correctAnswer = C.value;
+        }
+        else if ( D.checked)
+        {
+          alert("d")
+          correctAnswer = D.value;
+        }
+      
+       
+      setCorrectAns(correctAnswer)
+
+
+
       let QuestionCount;
       // now we creat object of question and option
 
@@ -65,10 +103,8 @@ export default function Addquestion() {
         OptionB: optionB,
         OptionC: optionC,
         OptionD: optionD,
+        Answer : CorrectAns,
       };
-
- 
-
 
       // now we are going to fetch quiz id and quiz array to add question and option on that array
 
@@ -136,7 +172,6 @@ export default function Addquestion() {
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
         crossOrigin="anonymous"
       />
-
       <div className="container" id="creatQuizUi">
         <br />
         <div className="alert">
@@ -216,6 +251,66 @@ export default function Addquestion() {
           placeholder=""
           aria-label=".form-control-sm example"
         />
+        <br />
+        <>
+          <label
+            htmlFor="exampleFormControlTextarea1"
+            className="form-label my-3"
+          >
+            <b> Sellect Correct Answer </b>
+          </label>
+          <br />
+          <div className="form-check form-check-inline ">
+            <input
+              className="form-check-input"
+              type="radio"
+              name="inlineRadioOptions"
+              id="inlineRadio1"
+              defaultValue="1"
+            />
+            <label className="form-check-label" htmlFor="inlineRadio1">
+              Option - A
+            </label>
+          </div>
+          <div className="form-check form-check-inline">
+            <input
+              className="form-check-input"
+              type="radio"
+              name="inlineRadioOptions"
+              id="inlineRadio2"
+              defaultValue="2"
+            />
+            <label className="form-check-label" htmlFor="inlineRadio2">
+              Option - B
+            </label>
+          </div>
+
+          <div className="form-check form-check-inline">
+            <input
+              className="form-check-input"
+              type="radio"
+              name="inlineRadioOptions"
+              id="inlineRadio3"
+              defaultValue="3"
+            />
+            <label className="form-check-label" htmlFor="inlineRadio1">
+              Option - C
+            </label>
+          </div>
+          <div className="form-check form-check-inline">
+            <input
+              className="form-check-input"
+              type="radio"
+              name="inlineRadioOptions"
+              id="inlineRadio4"
+              defaultValue="4"
+            />
+            <label className="form-check-label" htmlFor="inlineRadio2">
+              Option - D
+            </label>
+          </div>
+          <br />
+        </>
 
         <br />
         <button className="btn btn-primary" onClick={addquestion}>
@@ -234,7 +329,9 @@ export default function Addquestion() {
         </Link>
       </div>
       <br />
-      <br /> <br /><br /><br />
+      <br /> <br />
+      <br />
+      <br />
     </>
   );
 }

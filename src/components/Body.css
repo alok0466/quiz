@@ -1,9 +1,28 @@
 
 body{
-    background-color: blue;
+    /* background-color: rgb(218, 200, 241); */
+    
+    
+      
+ 
 }
 
 #creatquiz{
     color: white;
     text-decoration: none;
+}
+
+#container{
+    /* background-color:rgb(41, 41, 41); */
+    color: white;
+    margin-top: 1cm;
+}
+#main{
+    /* background-color: rgb(212, 193, 236); */
+    background-image: url('rgsrgsrgsg.jpg');
+    background-repeat: no-repeat;
+    background-size: 1600px 1000px;
+}
+#fristHeading{
+    color: yellow;
 }

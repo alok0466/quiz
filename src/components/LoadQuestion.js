@@ -38,7 +38,7 @@ export default function LoadQuestion() {
 
         <Link to="/LoadTest">
           <button className="btn btn-success container" onClick={LoadTest}>
-            Start Test{" "}
+            Next{" "}
           </button>
         </Link>
       </div>

@@ -2,10 +2,9 @@ import React, { createRef, useState } from "react";
 import "./Addquestion.css";
 import { Link } from "react-router-dom";
 export default function Addquestion() {
-  // here we copy quiz id
-
+  // Here we copy quizid
   function copyid() {
-    navigator.clipboard.writeText();
+    navigator.clipboard.writeText(quizId);
     alert(" QuizId has been copied to clipboard");
   }
 
@@ -32,14 +31,13 @@ export default function Addquestion() {
   };
 
   // here we creat states to handle input data
-
+  const [quizId, setquizid] = useState(localStorage.getItem("QuizId"));
   const [question, setquestion] = useState();
   const [optionA, setoptionA] = useState();
   const [optionB, setoptionB] = useState();
   const [optionC, setoptionC] = useState();
   const [optionD, setoptionD] = useState();
   const [CorrectAns, setCorrectAns] = useState();
-
 
   // const [alok, setalok] = useState(localStorage.getItem("QuizId"));
 
@@ -68,16 +66,12 @@ export default function Addquestion() {
       let correctAnswer = 0; // here we store the value of checked radio button
       // here we will store the value and should be happebn and done with the dependenceia to do that value
       if (A.checked) {
-        alert("a");
         correctAnswer = A.value;
       } else if (B.checked) {
-        alert("b");
         correctAnswer = B.value;
       } else if (C.checked) {
-        alert("c");
         correctAnswer = C.value;
       } else if (D.checked) {
-        alert("d");
         correctAnswer = D.value;
       }
       setCorrectAns(correctAnswer);
@@ -164,7 +158,7 @@ export default function Addquestion() {
         <br />
         <div className="alert">
           <div class="alert alert-success" role="alert">
-            <h5> Quiz id - {}</h5>
+            <h5> Quiz id - {quizId}</h5>
             <p>
               Remember Your Quiz id for furthere refrence and find your quiz in
               searchbox{" "}

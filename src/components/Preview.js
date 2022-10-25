@@ -9,6 +9,8 @@ export default function Preview() {
     let id = localStorage.getItem("QuizId");
     val = JSON.parse(val);
     id = JSON.parse(id);
+    console.log(val)
+    console.log(id)
 
     let quizid;
     let quiztitle;
@@ -16,6 +18,8 @@ export default function Preview() {
 
     for (let i = 0; i < val.length; i++) {
       let check = val[i];
+      console.log(check[0])
+      // console.log(id)
 
       if (check[0] == id) {
   
@@ -26,7 +30,12 @@ export default function Preview() {
         break;
       }
     }
- 
+ console.log(quizz)
+ console.log(quizid)
+
+ console.log(quiztitle)
+
+
     let alok = "";
     let QuestionCount;
 

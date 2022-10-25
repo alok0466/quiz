@@ -24,6 +24,7 @@ export default function LoadTest() {
         setoptionC(currentQuestion.OptionC);
         setoptionA(currentQuestion.OptionA);
         setoptionD(currentQuestion.OptionD);
+        setCorrectAms(currentQuestion.Answer);
         i += 1;
       }
 
@@ -33,9 +34,33 @@ export default function LoadTest() {
       alert("You Have done ");
     }
 
-    // Here we check that answer is correct or not 
+    // Here we check that answer is correct or not
 
+    let A = document.getElementById("exampleRadios1");
+    let B = document.getElementById("exampleRadios2");
+    let C = document.getElementById("exampleRadios3");
+    let D = document.getElementById("exampleRadios4");
 
+    let correctAnswer = 0; // here we store the value of checked radio button
+    // here we will store the value and should be happebn and done with the dependenceia to do that value
+    if (A.checked) {
+      correctAnswer = A.value;
+    } else if (B.checked) {
+      correctAnswer = B.value;
+    } else if (C.checked) {
+      correctAnswer = C.value;
+    } else if (D.checked) {
+      correctAnswer = D.value;
+    }
+
+    // here we update result 
+
+    let result = localStorage.getItem("result");
+    result = JSON.parse(result);
+    if (correctAnswer == CorrectAns) {
+      result += 1;
+      localStorage.setItem("result", JSON.stringify(result));
+    }
   };
   const [Title, setTitle] = useState();
   const [Test, setTest] = useState(false);
@@ -46,9 +71,11 @@ export default function LoadTest() {
   const [optionB, setoptionB] = useState();
   const [optionC, setoptionC] = useState();
   const [optionD, setoptionD] = useState();
+  const [CorrectAns, setCorrectAms] = useState();
 
   function FinishTest() {
-    alert("you have done your test ");
+    let x = localStorage.getItem("result")
+    alert("you have done your test " + "Your Result is " + x);
   }
   return (
     <div>
@@ -69,7 +96,7 @@ export default function LoadTest() {
                   type="radio"
                   name="exampleRadios"
                   id="exampleRadios1"
-                  value="option1"
+                  value="1"
                   checked
                 />
                 <label class="form-check-label" for="exampleRadios1">
@@ -83,7 +110,7 @@ export default function LoadTest() {
                   type="radio"
                   name="exampleRadios"
                   id="exampleRadios2"
-                  value="option1"
+                  value="2"
                   checked
                 />
                 <label class="form-check-label" for="exampleRadios1">
@@ -97,7 +124,7 @@ export default function LoadTest() {
                   type="radio"
                   name="exampleRadios"
                   id="exampleRadios3"
-                  value="option1"
+                  value="3"
                   checked
                 />
                 <label class="form-check-label" for="exampleRadios1">
@@ -111,7 +138,7 @@ export default function LoadTest() {
                   type="radio"
                   name="exampleRadios"
                   id="exampleRadios4"
-                  value="option1"
+                  value="4"
                   checked
                 />
                 <label class="form-check-label" for="exampleRadios1">

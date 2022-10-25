@@ -2,6 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 export default function LoadQuestion() {
   function LoadTest() {
+
+    // Here we set localstorage Result == 0 
+    localStorage.setItem = ("Result",JSON.stringify(0))
+
+    // Here we access data from localstorage 
+    
     let Bigdata = localStorage.getItem("Quizes");
     Bigdata = JSON.parse(Bigdata);
     let QuizId = localStorage.getItem("QuizId");
@@ -38,7 +44,7 @@ export default function LoadQuestion() {
 
         <Link to="/LoadTest">
           <button className="btn btn-success container" onClick={LoadTest}>
-            Next{" "}
+            Start Test{" "}
           </button>
         </Link>
       </div>

@@ -31,6 +31,7 @@ export default function Give() {
       } else if (i == content.length - 1) {
         // alert("wrong quiz id ");
         setTest(true);
+        alert("Entered Quiz Id is Incorrect")
       }
     }
   };
@@ -68,9 +69,9 @@ export default function Give() {
               <h5 class="card-title">Enter Quiz Id</h5>
               <input
                 id="inptxt"
-                className="form-control"
+                className="form-control text-primary fw-bold"
                 type="text"
-                placeholder="Default input"
+                placeholder=""
                 aria-label="default input example"
               />
 
@@ -104,6 +105,7 @@ export default function Give() {
           </div>
         </div>
       )}
+      <br /><br />
     </div>
   );
 }

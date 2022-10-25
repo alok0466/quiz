@@ -17,6 +17,8 @@ import Preview from './components/Preview';
 import Give from './components/Give';
 import LoadQuestion from './components/LoadQuestion';
 import LoadTest from './components/LoadTest';
+import Footer from './components/Footer';
+
 
 function App() {
   return (
@@ -31,6 +33,7 @@ function App() {
 <BrowserRouter>
 
 <Navbar></Navbar>
+
 
 
     <Routes>
@@ -48,7 +51,7 @@ function App() {
   </BrowserRouter>
 
 
-
+  <Footer></Footer>
 
 
 

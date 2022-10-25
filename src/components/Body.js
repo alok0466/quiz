@@ -1,18 +1,35 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Body.css";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Box";
+import { red } from "@mui/material/colors";
+const color = red[500];
+
 // import './Body.css';
 export default function Body() {
   return (
     <div id="main">
-      <img src="C:\Users\sc\Desktop\ak.net\React learning\quizapp\my-app\src\components\main.webp" alt="" />
+      <img
+        src="C:\Users\sc\Desktop\ak.net\React learning\quizapp\my-app\src\components\main.webp"
+        alt=""
+      />
       <br />
       <div className="container" id="fghj">
-        <h1 id="fristHeading" className="text-dark">Here You Go To Create a Quiz ...........</h1>
+        <h1 id="fristHeading" className="text-dark">
+          Here You Go To Create a Quiz ...........
+        </h1>
         <br />
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus enim totam non, nostrum sunt illo libero incidunt? Commodi rerum, quidem pariatur laborum nostrum ipsam assumenda ipsa iusto excepturi veniam Lorem ipsum dolor sit amet consectetur adipisicing elit. Non optio ab perspiciatis doloribus rerum nam suscipit, porro asperiores eveniet sequi deleniti quas repellat aspernatur fugiat, harum pariatur nisi quis praesentium!</p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus enim totam non, nostrum sunt illo libero incidunt?
+          Commodi rerum, quidem pariatur laborum nostrum ipsam assumenda ipsa
+          iusto excepturi veniam Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Non optio ab perspiciatis doloribus rerum nam
+          suscipit, porro asperiores eveniet sequi deleniti quas repellat
+          aspernatur fugiat, harum pariatur nisi quis praesentium!
+        </p>
         <br />
-     
       </div>
 
       <div class="container">
@@ -22,7 +39,7 @@ export default function Body() {
               <img class="card-img-top" src="" alt="" />
 
               <div class="card-body">
-                <h5 class="card-title">Card Alok title</h5>
+                <h5 class="card-title">Create Quiz</h5>
                 <p class="card-text">
                   Some quick example text to build on the card title and make up
                   the bulk of the card's content.
@@ -50,7 +67,7 @@ export default function Body() {
               <img class="card-img-top" src="" alt="" />
 
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
+                <h5 class="card-title">Give Quiz</h5>
                 <p class="card-text text-light ">
                   Some quick example text to build on the card title and make up
                   the bulk of the card's content.
@@ -71,6 +88,23 @@ export default function Body() {
             </div>
           </div>
         </div>
+      </div>
+      <div className="footer">
+        {/* <Box
+      sx={{
+        width: 1260,
+        height: 120,
+        backgroundColor: 'primary.dark',
+        // '&:hover': {
+        //   backgroundColor: 'primary.main',
+        //   opacity: [0.9, 0.8, 0.7],
+        // },
+      }}
+    >
+
+<Button variant="contained">Contained</Button>
+      </Box> */}
+
       </div>
     </div>
   );

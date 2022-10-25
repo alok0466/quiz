@@ -9,58 +9,48 @@ export default function X() {
 
   function TitleName(event) {
     setTitle(event.target.value);
+    setTest(false);
   }
 
   function AddTitle() {
-
-
-    let title = Title;
-
-    let QuizId = random();
-  
-
-    let id = localStorage.getItem("QuizId");
-    if (id == null) {
-      localStorage.setItem("QuizId", JSON.stringify(QuizId));
+    if (Title == undefined) {
+      alert("Input Field should not be empty .........");
     } else {
-      id = JSON.parse(id);
-      id = QuizId;
-      localStorage.setItem("QuizId", JSON.stringify(id));
+      let title = Title;
+
+      let QuizId = random();
+
+      let id = localStorage.getItem("QuizId");
+      if (id == null) {
+        localStorage.setItem("QuizId", JSON.stringify(QuizId));
+      } else {
+        id = JSON.parse(id);
+        id = QuizId;
+        localStorage.setItem("QuizId", JSON.stringify(id));
+      }
+
+      let details = localStorage.getItem("Quizes");
+      let questionarray = [];
+
+      if (details == null) {
+        let mainarray = [];
+        localStorage.setItem("Quizes", JSON.stringify(mainarray));
+      } else {
+        details = JSON.parse(details);
+        let subQuiz = [QuizId, title, questionarray];
+        details.push(subQuiz);
+        localStorage.setItem("Quizes", JSON.stringify(details));
+      }
+
+      alert("Quiz Title Added Successfully");
     }
-    
-
-    let details = localStorage.getItem("Quizes");
-    let questionarray = [];
-   
-
-    if (details == null) {
-      let mainarray = [];
-      localStorage.setItem("Quizes", JSON.stringify(mainarray));
-    } else {
- 
-      details = JSON.parse(details);
-      let subQuiz = [QuizId, title, questionarray];
-      details.push(subQuiz);
-      localStorage.setItem("Quizes", JSON.stringify(details));
-    }
-
-    alert("Quiz Title Added Successfully");
   }
 
   const [Title, setTitle] = useState();
+  const [Test, setTest] = useState(true);
 
   return (
     <>
-      <meta charSet="utf-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <title>Bootstrap demo</title>
-      <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
-        crossOrigin="anonymous"
-      />
-
       {/* here i am going to creat ui for creat Quiz  */}
 
       <div className="container" id="creatQuizUi">
@@ -78,13 +68,23 @@ export default function X() {
         />
 
         <br />
-
-        <Link to="/Addquestion">
-          <button onClick={AddTitle} className=" btn btn-success">
-            {" "}
-            Add Title{" "}
-          </button>
-        </Link>
+        {Test ? (
+          <div>
+            <button onClick={AddTitle} className=" btn btn-success">
+              {" "}
+              Add Title{" "}
+            </button>
+          </div>
+        ) : (
+          <div>
+            <Link to="/Addquestion">
+              <button onClick={AddTitle} className=" btn btn-success">
+                {" "}
+                Add Title{" "}
+              </button>
+            </Link>
+          </div>
+        )}
 
         <div>
           <br />

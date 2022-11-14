@@ -1,28 +1,84 @@
-
-body{
-    /* background-color: rgb(218, 200, 241); */
-    
-    
-      
- 
+body {
+  /* background-color: rgb(218, 200, 241); */
 }
 
-#creatquiz{
-    color: white;
-    text-decoration: none;
+#creatquiz {
+  color: white;
+  text-decoration: none;
+  width: 5cm;
 }
 
-#container{
-    /* background-color:rgb(41, 41, 41); */
-    color: white;
-    margin-top: 1cm;
+#container {
+  color: white;
+  margin-top: 1cm;
 }
-#main{
-    /* background-color: rgb(212, 193, 236); */
-    background-image: url('rgsrgsrgsg.jpg');
-    background-repeat: no-repeat;
-    background-size: 1600px 1000px;
+#main {
+  background-repeat: no-repeat;
 }
-#fristHeading{
-    color: yellow;
+#fristHeading {
+  color: black;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  margin-left: 40px;
+}
+
+#flex1 {
+  background-image: url("images.jpg");
+  width: 8cm;
+  height: 5cm;
+  margin-top: 100px;
+}
+
+#flex2 {
+  border: 2px solid blue;
+  width: 400px;
+  height: 300px;
+  margin-left: 3cm;
+}
+.button-container {
+  /* width: 3cm;
+  margin: auto; */
+}
+#BtnQuiz {
+  background-color: blue;
+  border: 1px solid white;
+  border-radius: 5px;
+  width: 7cm;
+  height: 1.3cm;
+
+}
+
+#Btn {
+  color: rgb(216, 17, 17);
+  width: 6cm;
+  margin-left: 2cm;
+  margin-top: 0.1cm;
+
+}
+#PlusIcon {
+  margin-right: 25px;
+}
+#BtnQuizgive {
+  margin-top: 15px;
+  background-color: rgb(231, 89, 33);
+  border: 1px solid white;
+  border-radius: 5px;
+  width: 7cm;
+  height: 1.3cm;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-style:italic;
+
+}
+#solveicon{
+  color: white;
+}
+.backgroundimg{
+  background-image:url("main.png");
+  background-repeat: no-repeat;
+  height: 5cm;
+  margin-left: 2.3cm;
+  margin-top:3px ;
 }

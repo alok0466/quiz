@@ -4,6 +4,8 @@ import "./Body.css";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Box";
 import { red } from "@mui/material/colors";
+import AddIcon from "@mui/icons-material/Add";
+import ViewStreamIcon from '@mui/icons-material/ViewStream';
 const color = red[500];
 
 // import './Body.css';
@@ -15,7 +17,7 @@ export default function Body() {
         alt=""
       />
       <br />
-      <div className="container" id="fghj">
+      <div className="container text-dark" id="fghj">
         <h1 id="fristHeading" className="text-dark">
           Here You Go To Create a Quiz ...........
         </h1>
@@ -32,80 +34,61 @@ export default function Body() {
         <br />
       </div>
 
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6 mb-4">
-            <div class="card bg-info">
-              <img class="card-img-top" src="" alt="" />
+      <div className="flex-container">
+        <div className="flex-item" id="flex1">
+          <img src="asdfasdf.png" alt="" />
+        </div>
 
-              <div class="card-body">
-                <h5 class="card-title">Create Quiz</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-                <div class="d-grid gap-2 col-10 mx-auto">
-                  <button
-                    className="btn btn-outline-primary  "
-                    id="creat quiz "
-                  >
-                    <Link
-                      to="/Creat"
-                      class="nav-link active"
-                      aria-current="page"
-                    >
-                      {" "}
-                      Create Quiz
-                    </Link>
-                  </button>
-                </div>
-              </div>
-            </div>
+        <div className="flex-item" id="flex2">
+          <div className="backgroundimg">
+            <br /> <br />
           </div>
-          <div class="col-lg-6 mb-4">
-            <div class="card bg-success">
-              <img class="card-img-top" src="" alt="" />
+          <div className="button-container">
+            <div className="createBtn">
+              <div id="Btn">
+                <button id="BtnQuiz">
+                  <AddIcon id="PlusIcon" style={{ color: "white" }}>
+                    {" "}
+                  </AddIcon>
+                  <Link
+                    id="GiveBtn"
+                    style={{ textDecoration: "none", color: "white" }}
+                    to="/Give"
+                  >
+                    <b>Create Quiz</b>{" "}
+                  </Link>
+                </button>
+                <button id="BtnQuizgive">
 
-              <div class="card-body">
-                <h5 class="card-title">Give Quiz</h5>
-                <p class="card-text text-light ">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-                <div class="d-grid gap-2 col-10 mx-auto">
-                  <button className="btn btn-outline-danger " id="give quiz ">
-                    <Link
-                      to="/Give"
-                      class="nav-link active"
-                      aria-current="page"
-                    >
-                      {" "}
-                      Give Quiz
-                    </Link>
-                  </button>
-                </div>
+                <ViewStreamIcon id="solveicon"></ViewStreamIcon>
+                  <Link
+                    id="GiveBtn"
+                    style={{ textDecoration: "none", color: "white" }}
+                    to="/Give"
+                  >
+                   <b> Solve Quiz{" "}</b>
+                  </Link>
+                </button>
               </div>
             </div>
           </div>
         </div>
+        <div className="footer">
+       
+        </div>
       </div>
-      <div className="footer">
-        {/* <Box
-      sx={{
-        width: 1260,
-        height: 120,
-        backgroundColor: 'primary.dark',
-        // '&:hover': {
-        //   backgroundColor: 'primary.main',
-        //   opacity: [0.9, 0.8, 0.7],
-        // },
-      }}
-    >
-
-<Button variant="contained">Contained</Button>
-      </Box> */}
-
-      </div>
+    <div>
+    <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
     </div>
+    </div>
+    
   );
 }

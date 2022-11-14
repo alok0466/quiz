@@ -1,40 +1,95 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+
 
 export default function LoadTest() {
-  // Here is NextQuestion function
-
-  let NextQuestion = () => {
+  let NextQuestionfrist = () => {
+    console.log("alok is don ");
     setTest(true);
-    let Count = localStorage.getItem("count");
+    let Count = localStorage.getItem("Count");
     Count = JSON.parse(Count);
-    setQuestionCount(Count);
+    setQuestionCount(Count + 1);
 
-    let data = localStorage.getItem("CurrentQuiz");
+    let mca = localStorage.getItem("CurrentQuiz");
+    let data = mca;
     data = JSON.parse(data);
-    let quiz = data[2];
-    console.log(quiz);
-    setTotalQuestion(quiz.length);
-    if (Count < quiz.length + 1) {
-      let i = 0;
-      while (i < quiz.length) {
-        const currentQuestion = quiz[Count];
-        //   console.log(quiz[i])
-        setquestion(currentQuestion.Question);
-        setoptionB(currentQuestion.OptionB);
-        setoptionC(currentQuestion.OptionC);
-        setoptionA(currentQuestion.OptionA);
-        setoptionD(currentQuestion.OptionD);
-        setCorrectAms(currentQuestion.Answer);
-        i += 1;
-      }
+    setTotalQuestion(data.length);
+    if (Count < data.length) {
+      const currentQuestion = data[Count];
+
+      setquestion(currentQuestion.Question);
+      setoptionB(currentQuestion.OptionB);
+      setoptionC(currentQuestion.OptionC);
+      setoptionA(currentQuestion.OptionA);
+      setoptionD(currentQuestion.OptionD);
+      setCorrectAms(currentQuestion.Answer);
+
+      // here we call a function to update count
 
       Count = Count + 1;
-      localStorage.setItem("count", JSON.stringify(Count));
-    } else if (QuestionCount == TotalQuestion - 1) {
+      localStorage.setItem("Count", JSON.stringify(Count));
+    } else if (QuestionCount == TotalQuestion) {
       alert("You Have done ");
     }
 
-    // Here we check that answer is correct or not
+    // // Here we check that answer is correct or not
+
+    // let A = document.getElementById("exampleRadios1");
+    // let B = document.getElementById("exampleRadios2");
+    // let C = document.getElementById("exampleRadios3");
+    // let D = document.getElementById("exampleRadios4");
+
+    // let correctAnswer = 0; // here we store the value of checked radio button
+    // // here we will store the value and should be happebn and done with the dependenceia to do that value
+    // if (A.checked) {
+    //   correctAnswer = A.value;
+    // } else if (B.checked) {
+    //   correctAnswer = B.value;
+    // } else if (C.checked) {
+    //   correctAnswer = C.value;
+    // } else if (D.checked) {
+    //   correctAnswer = D.value;
+    // }
+
+    // // here we update result
+
+    // let result = localStorage.getItem("result");
+    // result = JSON.parse(result);
+    // if (correctAnswer == CorrectAns) {
+    //   result += 1;
+    //   localStorage.setItem("result", JSON.stringify(result));
+    // }
+  };
+
+  let NextQuestion = () => {
+    let Count = localStorage.getItem("Count");
+    Count = JSON.parse(Count);
+    setQuestionCount(Count + 1);
+
+    let mca = localStorage.getItem("CurrentQuiz");
+    let data = mca;
+    data = JSON.parse(data);
+    setTotalQuestion(data.length);
+    if (Count < data.length) {
+      const currentQuestion = data[Count];
+
+      setquestion(currentQuestion.Question);
+      setoptionB(currentQuestion.OptionB);
+      setoptionC(currentQuestion.OptionC);
+      setoptionA(currentQuestion.OptionA);
+      setoptionD(currentQuestion.OptionD);
+      setCorrectAms(currentQuestion.Answer);
+
+      // here we call a function to update count
+
+      Count = Count + 1;
+      localStorage.setItem("Count", JSON.stringify(Count));
+    } else if (QuestionCount == TotalQuestion) {
+      alert("You Have done ");
+      setcheck(true);
+    }
+
+    // // Here we check that answer is correct or not
 
     let A = document.getElementById("exampleRadios1");
     let B = document.getElementById("exampleRadios2");
@@ -53,15 +108,17 @@ export default function LoadTest() {
       correctAnswer = D.value;
     }
 
-    // here we update result 
+    // here we update result
 
-    let result = localStorage.getItem("result");
+    let result = localStorage.getItem("Result");
     result = JSON.parse(result);
     if (correctAnswer == CorrectAns) {
       result += 1;
-      localStorage.setItem("result", JSON.stringify(result));
+      localStorage.setItem("Result", JSON.stringify(result));
     }
   };
+
+  
   const [Title, setTitle] = useState();
   const [Test, setTest] = useState(false);
   const [QuestionCount, setQuestionCount] = useState();
@@ -72,10 +129,13 @@ export default function LoadTest() {
   const [optionC, setoptionC] = useState();
   const [optionD, setoptionD] = useState();
   const [CorrectAns, setCorrectAms] = useState();
+  const [check, setcheck] = useState(false);
+  // const [TotalQuestion, setTotalQuestion] = useState();
 
   function FinishTest() {
-    let x = localStorage.getItem("result")
-    alert("you have done your test " + "Your Result is " + x);
+    let x = localStorage.getItem("Result");
+    let percentage = (x * 100) / TotalQuestion;
+    alert("you have done your test " + "Your Result is " + percentage + "%");
   }
   return (
     <div>
@@ -147,27 +207,40 @@ export default function LoadTest() {
               </div>
               <br />
             </div>
-
+            {/* {check ? <div></div> : <div></div>} */}
             <div className="test text-center ">
+              {check ? 
+              (<div>
+                <Link to="/Result">
+                 <button
+                className="btn btn-primary mx-3 my-3 "
+                onClick={FinishTest}
+              >
+                Finish Test{" "}
+              </button>
+              </Link>
+              </div>) :
+              ( <div>
               <button
                 className="btn btn-primary mx-3 my-3 "
                 onClick={NextQuestion}
               >
                 Next Question{" "}
               </button>
+              </div>) }
 
-              <button
+              {/* <button
                 className="btn btn-success mx-3 my-3 "
                 onClick={FinishTest}
               >
                 Finish Test{" "}
-              </button>
+              </button> */}
             </div>
           </div>
         </div>
       ) : (
         <div className="inst border text-center  ">
-          <h3>Instructions :-</h3>
+          <h3> Instructions :-</h3>
           <p>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta
             soluta eveniet enim? Impedit, expedita delectus laboriosam
@@ -175,7 +248,10 @@ export default function LoadTest() {
             accusantium minus voluptatibus repellendus. Dolorem, illo
             consequuntur.
           </p>
-          <button className="btn btn-info mx-2 my--2" onClick={NextQuestion}>
+          <button
+            className="btn btn-info mx-2 my--2"
+            onClick={NextQuestionfrist}
+          >
             Start Test
           </button>
           <br />

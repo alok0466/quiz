@@ -9,8 +9,8 @@ export default function Preview() {
     let id = localStorage.getItem("QuizId");
     val = JSON.parse(val);
     id = JSON.parse(id);
-    console.log(val)
-    console.log(id)
+    console.log(val);
+    console.log(id);
 
     let quizid;
     let quiztitle;
@@ -18,11 +18,10 @@ export default function Preview() {
 
     for (let i = 0; i < val.length; i++) {
       let check = val[i];
-      console.log(check[0])
+      console.log(check[0]);
       // console.log(id)
 
       if (check[0] == id) {
-  
         quizid = check[0];
         quiztitle = check[1];
         quizz = check[2];
@@ -30,11 +29,10 @@ export default function Preview() {
         break;
       }
     }
- console.log(quizz)
- console.log(quizid)
+    console.log(quizz);
+    console.log(quizid);
 
- console.log(quiztitle)
-
+    console.log(quiztitle);
 
     let alok = "";
     let QuestionCount;
@@ -118,7 +116,7 @@ export default function Preview() {
     
     
       `;
-      
+
       setQuestionCount(x + 1);
     }
     let main = document.getElementById("preview");
@@ -141,27 +139,30 @@ export default function Preview() {
 
   return (
     <div>
-      <div className="text-center buttons">
-        <button className="btn btn-success my-3" onClick={showQuiz}>
-          Show Quiz
-        </button>
-        <Link to="/Addquestion">
-          <button className="btn btn-primary mx-2">Add more Question </button>
-        </Link>
-
-        <Link to="/">
-          <button className="btn btn-primary mx-2" onClick={finish}>
-            Finish Test
-          </button>
-        </Link>
+      <div >
+      
       </div>
 
       <div className="ShowQuiz">
-        <h1 className="text-center">{title}</h1>
+        <h5 className="text-center"> Quiz Title - {title}</h5>
         <p className="quizid text-center">
           <b> Quiz id - {qid}</b>
         </p>
         <div id="preview" className="container"></div>
+        <div className="text-center buttons">
+        <button className="btn btn-success my-3" onClick={showQuiz}>
+          Show Quiz
+        </button>
+          <Link to="/Addquestion">
+            <button className="btn btn-primary mx-2">Add more Question </button>
+          </Link>
+
+          <Link to="/">
+            <button className="btn btn-primary mx-2" onClick={finish}>
+              Finish Test
+            </button>
+          </Link>
+        </div>
         <br />
         <br /> <br />
         <br /> <br />

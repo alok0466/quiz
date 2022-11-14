@@ -18,6 +18,7 @@ import Give from './components/Give';
 import LoadQuestion from './components/LoadQuestion';
 import LoadTest from './components/LoadTest';
 import Footer from './components/Footer';
+import Result from './components/Result'
 
 
 function App() {
@@ -44,8 +45,8 @@ function App() {
       <Route path='/Addquestion' element={  <Addquestion></Addquestion>}></Route>
       <Route path='/Preview' element={  <Preview></Preview>}></Route>
       <Route path='/Give' element={  <Give></Give>}></Route>
-      <Route path='/LoadQuestion' element={<LoadQuestion></LoadQuestion>}></Route>
       <Route path='/LoadTest' element={<LoadTest></LoadTest>}>alsdjflak;sf</Route>
+      <Route path='/Result' element={<Result></Result>}></Route>
     </Routes>
     
   </BrowserRouter>
@@ -53,7 +54,7 @@ function App() {
 
   <Footer></Footer>
 
-
+{/* <Result></Result> */}
 
 </>
 

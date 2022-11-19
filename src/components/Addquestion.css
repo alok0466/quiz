@@ -6,3 +6,16 @@
     border-radius: 6px;
     font-size: 15px;
 }
+.question{
+    border: 2px solid red ;
+    background-color: blue;
+    color: white;
+}
+
+.main{
+    background-color: rgb(210, 245, 241);
+}
+.input{
+    font-size: large;
+    background-color: coral;
+}

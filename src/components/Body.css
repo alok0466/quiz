@@ -33,9 +33,11 @@ body {
 }
 
 #flex2 {
-  border: 2px solid blue;
-  width: 400px;
-  height: 300px;
+  border: 2px solid white;
+  background-color: bisque;
+  border-radius: 10px;
+  width: 600px;
+  height: 500px;
   margin-left: 3cm;
 }
 .button-container {
@@ -46,15 +48,16 @@ body {
   background-color: blue;
   border: 1px solid white;
   border-radius: 5px;
-  width: 7cm;
-  height: 1.3cm;
+  width: 11cm;
+  height: 2cm;
 
 }
 
 #Btn {
   color: rgb(216, 17, 17);
-  width: 6cm;
-  margin-left: 2cm;
+  width: 11cm;
+  height: 2cm;
+  margin-left: 2.5cm;
   margin-top: 0.1cm;
 
 }
@@ -66,8 +69,8 @@ body {
   background-color: rgb(231, 89, 33);
   border: 1px solid white;
   border-radius: 5px;
-  width: 7cm;
-  height: 1.3cm;
+  width: 11cm;
+  height: 2cm;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-style:italic;
 
@@ -76,9 +79,10 @@ body {
   color: white;
 }
 .backgroundimg{
+  margin-top: 12px;
   background-image:url("main.png");
   background-repeat: no-repeat;
   height: 5cm;
-  margin-left: 2.3cm;
-  margin-top:3px ;
+  margin-left:185px;
+  margin-top:41px ;
 }

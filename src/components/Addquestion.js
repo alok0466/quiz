@@ -33,15 +33,17 @@ export default function Addquestion() {
   // here we creat states to handle input data
   const [quizId, setquizid] = useState(localStorage.getItem("QuizId"));
   const [question, setquestion] = useState();
-  const [optionA, setoptionA] = useState();
-  const [optionB, setoptionB] = useState();
-  const [optionC, setoptionC] = useState();
-  const [optionD, setoptionD] = useState();
-  const [CorrectAns, setCorrectAns] = useState();
+  const [ optionA , setoptionA] = useState()
+  const [optionB,setoptionB] = useState();
+  const [ optionC , setoptionC] = useState()
+  const [optionD,setoptionD] = useState();
+  const[CorrectAns,setCorrectAns] = useState();
 
   // const [alok, setalok] = useState(localStorage.getItem("QuizId"));
 
-  // HERE WE CREAT OBJECT AND SET INTO LOCALSTORAGE THOSE QUESTIONS
+  // HERE WE CREAT OBJECT AND SET INTO LOCALSTORAGE THOSE QUESTion 
+  // if we discuss about localstorage than we can difine as normal storage and should be 
+  // declear as the main host as database 
 
   function addquestion(event) {
     if (question == null) {
@@ -144,7 +146,7 @@ export default function Addquestion() {
   };
 
   return (
-    <>
+    <div className="main">
       <meta charSet="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <title>,</title>
@@ -168,73 +170,77 @@ export default function Addquestion() {
             </a>
           </div>
         </div>
-        <label htmlFor="exampleFormControlTextarea1" className="form-label">
-          <b>Question : -</b>
-        </label>
 
-        <textarea
-          className="form-control"
-          id="exampleFormControlTextarea1"
-          rows={2}
-          onChange={onchangeQuestion}
-          defaultValue={""}
-        />
+        <div className="border-2 container
+         question">
+          <label htmlFor="exampleFormControlTextarea1" className="form-label">
+            <b>Question : -</b>
+          </label>
 
-        <br />
-        <b></b>
-        <label htmlFor="exampleFormControlTextarea1" className="form-label">
-          <b> Option - A</b>
-        </label>
+          <textarea
+            className="form-control"
+            id="exampleFormControlTextarea1"
+            rows={2}
+            onChange={onchangeQuestion}
+            defaultValue={""}
+          />
 
-        <input
-          className="form-control form-control-sm"
-          type="text"
-          id="A"
-          onChange={onchangeA}
-          placeholder=""
-          aria-label=".form-control-sm example"
-        />
+          <br />
 
-        <label htmlFor="exampleFormControlTextarea1" className="form-label">
-          <b> Option - B</b>
-        </label>
+          <label htmlFor="exampleFormControlTextarea1" className="form-label">
+            <b> Option - A</b>
+          </label>
 
-        <input
-          className="form-control form-control-sm"
-          id="B"
-          type="text"
-          onChange={onchangeB}
-          placeholder=""
-          aria-label=".form-control-sm example"
-        />
+          <input
+            className="form-control form-control-sm "
+            type="text"
+            id="A"
+            onChange={onchangeA}
+            placeholder=""
+            aria-label=".form-control-sm example"
+          />
 
-        <label htmlFor="exampleFormControlTextarea1" className="form-label">
-          <b> Option - C</b>
-        </label>
+          <label htmlFor="exampleFormControlTextarea1" className="form-label">
+            <b> Option - B</b>
+          </label>
 
-        <input
-          className="form-control form-control-sm"
-          type="text"
-          id="C"
-          onChange={onchangeC}
-          placeholder=""
-          aria-label=".form-control-sm example"
-        />
+          <input
+            className="form-control form-control-sm "
+            id="B"
+            type="text"
+            onChange={onchangeB}
+            placeholder=""
+            aria-label=".form-control-sm example"
+          />
 
-        <label htmlFor="exampleFormControlTextarea1" className="form-label">
-          <b> Option - D</b>
-        </label>
+          <label htmlFor="exampleFormControlTextarea1" className="form-label">
+            <b> Option - C</b>
+          </label>
 
-        <input
-          className="form-control form-control-sm"
-          type="text"
-          id="D"
-          onChange={onchangeD}
-          placeholder=""
-          aria-label=".form-control-sm example"
-        />
-        <br />
-        <>
+          <input
+            className="form-control form-control-sm"
+            type="text"
+            id="C"
+            onChange={onchangeC}
+            placeholder=""
+            aria-label=".form-control-sm example"
+          />
+
+          <label htmlFor="exampleFormControlTextarea1" className="form-label">
+            <b> Option - D</b>
+          </label>
+
+          <input
+            className="form-control form-control-sm"
+            type="text"
+            id="D"
+            onChange={onchangeD}
+            placeholder=""
+            aria-label=".form-control-sm example"
+          />
+          <br />
+        </div>
+        <div className="text-center">
           <label
             htmlFor="exampleFormControlTextarea1"
             className="form-label my-3"
@@ -292,28 +298,31 @@ export default function Addquestion() {
             </label>
           </div>
           <br />
-        </>
+        </div>
+
+
 
         <br />
-        <button className="btn btn-primary" onClick={addquestion}>
-          {" "}
-          Add Question
-        </button>
-
-        <Link to="/Preview">
-          <button className="btn btn-primary mx-2">Preview</button>
-        </Link>
-
-        <Link to="/">
-          <button className="btn btn-primary mx-2" onClick={finish}>
-            Finish
+        <div className="text-center">
+          <button className="btn btn-primary" onClick={addquestion}>
+            {" "}
+            Add Question
           </button>
-        </Link>
+
+          <Link to="/Preview">
+            <button className="btn btn-primary mx-2">Preview</button>
+          </Link>
+
+          <Link to="/">
+            <button className="btn btn-primary mx-2" onClick={finish}>
+              Finish
+            </button>
+          </Link>
+
+        </div>
+        <br /><br /><br /><br /><br />
+
       </div>
-      <br />
-      <br /> <br />
-      <br />
-      <br />
-    </>
+    </div>
   );
 }

@@ -15,17 +15,26 @@ export default function Footer() {
               <div class="col">
                 <h3>How it works </h3>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Id
-                  nesciunt minima labore voluptates, quibusdam maiores?
+             <p>1. We take Question as input by Quiz Creater <br />
+             2. We Provide a unique Quiz id to creater <br />
+             3. With that Quizid student can attend Quiz and evulate themselves 
+
+             </p>
+
+                
                 </p>
               </div>
               <div className="col ">
                 <div className="mx-2">
                   <h3>Contact us </h3>
                 </div>
-                <ul className="mx--3">
+                <p className="my-3">
+                  Quzzy01456@gmail.com
+                <br />
+                +91 789801XXXX </p>
+                <ul className="">
                
-                    <a className="mx--2"
+                    <a className=""
                       href="https://www.facebook.com/profile.php?id=100085039485933"
                       target="blank"
                       style={{ textDecoration: "none", color: "white" }}
@@ -54,10 +63,12 @@ export default function Footer() {
                 </ul>
               </div>
               <div class="col">
-                Column Column Lorem ipsum dolor sit, amet consectetur
-                adipisicing elit. Totam, quisquam beatae harum facilis veniam
-                necessitatibus doloremque at odio impedit ex?
-              </div>
+             <h3>Creaters </h3>
+             <br />
+             <p>Alok Kumar Chaturvedi <br />
+             Pooja Patil <br />
+             Kishor Kumar </p>
+      </div>
             </div>
           </div>
         </div>

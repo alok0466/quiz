@@ -53,7 +53,7 @@ export default function Body() {
                   <Link
                     id="GiveBtn"
                     style={{ textDecoration: "none", color: "white" }}
-                    to="/Give"
+                    to="/Creat"
                   >
                     <b>Create Quiz</b>{" "}
                   </Link>
@@ -83,10 +83,7 @@ export default function Body() {
           <br />
           <br />
           <br />
-          <br />
-          <br />
-          <br />
-          <br />
+      
     </div>
     </div>
     

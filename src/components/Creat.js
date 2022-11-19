@@ -14,7 +14,7 @@ export default function X() {
 
   function AddTitle() {
     if (Title == undefined) {
-      alert("Input Field should not be empty .........");
+      alert(" Test must Have is's title so Enter Test Title ");
     } else {
       let title = Title;
 

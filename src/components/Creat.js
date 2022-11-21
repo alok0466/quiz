@@ -1,6 +1,7 @@
 import { warning } from "@remix-run/router";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import "./Create.css"
 export default function X() {
   function random() {
     let randomval = Math.floor(Math.random() * 100000000 + 1);
@@ -53,10 +54,10 @@ export default function X() {
     <>
       {/* here i am going to creat ui for creat Quiz  */}
 
-      <div className="container" id="creatQuizUi">
+      <div className="container border" id="creatQuizUi">
         <br />
         <label htmlFor="exampleFormControlTextarea1" className="form-label">
-          <h4> Quiz / Test Title </h4>
+          <h4 id="Title">Test Title</h4>
         </label>
 
         <input
@@ -69,14 +70,14 @@ export default function X() {
 
         <br />
         {Test ? (
-          <div>
+          <div >
             <button onClick={AddTitle} className=" btn btn-success">
               {" "}
               Add Title{" "}
             </button>
           </div>
         ) : (
-          <div>
+          <div className="border">
             <Link to="/Addquestion">
               <button onClick={AddTitle} className=" btn btn-success">
                 {" "}
@@ -91,6 +92,7 @@ export default function X() {
           <h3>Preview</h3>
           <p>{Title}</p>
         </div>
+        <br/><br/><br/><br/><br/>
       </div>
     </>
   );

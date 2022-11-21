@@ -23,13 +23,7 @@ export default function Body() {
         </h1>
         <br />
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Necessitatibus enim totam non, nostrum sunt illo libero incidunt?
-          Commodi rerum, quidem pariatur laborum nostrum ipsam assumenda ipsa
-          iusto excepturi veniam Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Non optio ab perspiciatis doloribus rerum nam
-          suscipit, porro asperiores eveniet sequi deleniti quas repellat
-          aspernatur fugiat, harum pariatur nisi quis praesentium!
+          Please click on the button below to create a quiz.
         </p>
         <br />
       </div>

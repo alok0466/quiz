@@ -7,7 +7,6 @@ import {
   Route,
 } from "react-router-dom";
 import Body from './components/Body';
-import About from './components/Ram';
 import CreatQuiz from './components/CreatQuiz';
 import X from './components/Creat';
 import Addquestion from './components/Addquestion';
@@ -18,7 +17,8 @@ import Give from './components/Give';
 import LoadQuestion from './components/LoadQuestion';
 import LoadTest from './components/LoadTest';
 import Footer from './components/Footer';
-import Result from './components/Result'
+import Result from './components/Result';
+import About from './pages/About';
 
 
 function App() {
@@ -38,7 +38,7 @@ function App() {
 
 
     <Routes>
-      <Route path='/Ram' element={<About></About>}></Route>
+      <Route path='/about' element={<About/>}></Route>
       <Route path ='/' element={<Body></Body>}></Route>
       <Route path='/Creat' element={<X></X>}></Route>
       <Route path='/CreatQuiz' element={<CreatQuiz></CreatQuiz>}></Route>

@@ -3,6 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import"./Navbar.css";
 
+
 export default function Navbar(props) {
   return (
     <>
@@ -37,7 +38,7 @@ export default function Navbar(props) {
                 <a className="nav-link" href="#"></a>
               </li>
               <li className="nav-item">
-                <Link to="/Ram" className="nav-link active" aria-current="page">
+                <Link to="/about" className="nav-link active" aria-current="page">
                   {" "}
                   About
                 </Link>

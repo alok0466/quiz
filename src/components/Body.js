@@ -23,7 +23,7 @@ export default function Body() {
         </h1>
         <br />
         <p>
-          Please click on the button below to create a quiz.
+          Please click on the button below to create a quiz .
         </p>
         <br />
       </div>

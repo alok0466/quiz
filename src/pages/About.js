@@ -21,8 +21,9 @@ function About() {
            </div>
           <div className='lowerContainer'>
             <h4>Alok</h4>
-             <p> Column Column Lorem ipsum dolor sit, amet consectetur
-                adipis dfhidhdoidjdoi eiuhdiehdioeh
+             <p> Fullstack Developer
+                 contact-7454540145
+                 mail id-quzzy321@gmail.com
              </p>
           </div>
           <div className="icons-container">
@@ -69,8 +70,9 @@ function About() {
            </div>
           <div className='lowerContainer'>
             <h4>Kishore</h4>
-             <p> Column Column Lorem ipsum dolor sit, amet consectetur
-                adipis dfhidhdoidjdoi eiuhdiehdioeh
+             <p> Frontend Developer
+                 contact-7339629143
+                 mail id-quzzy312@gmail.com
              </p>
           </div>
           <div className="icons-container">
@@ -117,8 +119,9 @@ function About() {
            </div>
           <div className='lowerContainer'>
             <h4>Pooja</h4>
-             <p> Column Column Lorem ipsum dolor sit, amet consectetur
-                adipis dfhidhdoidjdoi eiuhdiehdioeh
+             <p> Frontend Developer
+                contact -9665484241
+                mail id-quzzy123@gmail.com
              </p>
           </div>
           <div className="icons-container">

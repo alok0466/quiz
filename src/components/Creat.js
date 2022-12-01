@@ -54,7 +54,7 @@ export default function X() {
     <>
       {/* here i am going to creat ui for creat Quiz  */}
 
-      <div className="container border" id="creatQuizUi">
+      <div className="container border body-containter" id="creatQuizUi">
         <br />
         <label htmlFor="exampleFormControlTextarea1" className="form-label">
           <h4 id="Title">Test Title</h4>

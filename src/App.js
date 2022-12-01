@@ -37,7 +37,7 @@ function App() {
 
 
 
-    <Routes>
+    <Routes clasName="main-all-routes">
       <Route path='/about' element={<About/>}></Route>
       <Route path ='/' element={<Body></Body>}></Route>
       <Route path='/Creat' element={<X></X>}></Route>

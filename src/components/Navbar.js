@@ -7,7 +7,7 @@ import"./Navbar.css";
 export default function Navbar(props) {
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-info navbar-info">
+      <nav className="navbar nav-bar-content navbar-expand-lg bg-info navbar-info">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
             {props.title}

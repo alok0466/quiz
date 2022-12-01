@@ -20,7 +20,7 @@ let ShowResult = () =>
 
 
   return (
-    <div>
+    <div className="body-containter">
     <button className="btn btn-primary" onClick={ShowResult}>
         Show my result 
     </button>

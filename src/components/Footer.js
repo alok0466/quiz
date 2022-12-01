@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <>
       <div className="container-footer bg-dark text-light">
-        <div className="footer border ">
+        <div className="footer border footer-sec-content">
           <div class="container text-center">
             <div class="row">
               <div class="col">

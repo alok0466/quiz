@@ -64,15 +64,16 @@ export default function LoadTest() {
   let NextQuestion = () => {
     let Count = localStorage.getItem("Count");
     Count = JSON.parse(Count);
-    setQuestionCount(Count + 1);
+  
 
     let mca = localStorage.getItem("CurrentQuiz");
     let data = mca;
     data = JSON.parse(data);
-    setTotalQuestion(data.length);
+   
     if (Count < data.length) {
       const currentQuestion = data[Count];
-
+      setTotalQuestion(data.length);
+      setQuestionCount(Count + 1);
       setquestion(currentQuestion.Question);
       setoptionB(currentQuestion.OptionB);
       setoptionC(currentQuestion.OptionC);
@@ -84,7 +85,7 @@ export default function LoadTest() {
 
       Count = Count + 1;
       localStorage.setItem("Count", JSON.stringify(Count));
-    } else if (QuestionCount == TotalQuestion) {
+    } else if (Count == data.length) {
       alert("You Have done ");
       setcheck(true);
     }
@@ -138,9 +139,9 @@ export default function LoadTest() {
     alert("you have done your test " + "Your Result is " + percentage + "%");
   }
   return (
-    <div>
+    <div className="body-containter">
       {Test ? (
-        <div>
+        <div >
           <div className="border container my-2">
             <div></div>
             <h1 className="text-center">{Title} </h1>

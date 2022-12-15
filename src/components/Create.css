@@ -1,7 +1,70 @@
 #Title{
-
 float: center;
 padding-left: 500px;
+}
 
+.box{
+    width: 18cm;
+    height: 8cm;
+    background-color: rgb(224, 244, 237);
+    border: 2px solid red;
+    border-radius: 12px;
+    position: relative;
+    left: 3cm;
+    top:3cm; 
+}
+
+#input{
+    position: relative;
+    top: 2cm;
+    left: 10cm;
+    width: 12cm;
+    height: 1.2cm;
+    /* background-color: bisque; */
+    border: 2px solid black;
+    border-radius: 10px;
+    color: rgb(20, 30, 222);
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: normal;
+    text-align: center;
+
+}
+
+.addBtn{
+    position: relative; 
+    top: 2cm; 
+    left: 13cm;
+    border: 1px solid red;
+    background-color: white;
+    color: red;
+    border-radius: 10px;
+    width: 5cm;
+    height: 0.9cm;
+    font-weight: bold;
+    font-style: italic;
+}
+
+
+.addBtn:hover{
+
+    background-color: red;
+    color: white;
+    border: 2px solid white;
+}
+
+.Btnmain{
+
+    position: relative; 
+    top: 2cm; 
+    left: 13cm;
+    border: 1px solid red;
+    background-color: white;
+    color: red;
+    border-radius: 10px;
+    width: 5cm;
+    height: 0.9cm;
+    font-weight: bold;
+    font-style: italic;
 
 }

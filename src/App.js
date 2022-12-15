@@ -4,21 +4,20 @@ import Navbar from './components/Navbar';
 import {
   BrowserRouter,
   Routes,
-  Route,
+  Route
 } from "react-router-dom";
 import Body from './components/Body';
 import About from './components/Ram';
 import CreatQuiz from './components/CreatQuiz';
 import X from './components/Creat';
 import Addquestion from './components/Addquestion';
-import Pra from './components/Pra';
-import Ak from './components/Ak' 
 import Preview from './components/Preview';
 import Give from './components/Give';
 import LoadQuestion from './components/LoadQuestion';
 import LoadTest from './components/LoadTest';
 import Footer from './components/Footer';
 import Result from './components/Result'
+import Ram from './components/Ram'
 
 
 function App() {
@@ -38,7 +37,7 @@ function App() {
 
 
     <Routes>
-      <Route path='/Ram' element={<About></About>}></Route>
+      <Route path='/Ram' element={<Ram></Ram>}></Route>
       <Route path ='/' element={<Body></Body>}></Route>
       <Route path='/Creat' element={<X></X>}></Route>
       <Route path='/CreatQuiz' element={<CreatQuiz></CreatQuiz>}></Route>
@@ -52,7 +51,7 @@ function App() {
   </BrowserRouter>
 
 
-  <Footer></Footer>
+  {/* <Footer></Footer> */}
 
 {/* <Result></Result> */}
 

@@ -1,46 +1,18 @@
 import React from 'react'
-import { json } from 'react-router-dom';
-import {index} from './Pra'
-let x = index ; 
-About(x)
- function About(x) {
-let b = JSON.stringify(x)
 
-
+export default function Ram() {
   return (
-
-   <div>
-
-
     <div>
 
+     <div className="container">
+
+
+      <h3>Creater of that app</h3>
+      <p>Alok kumar chaturvedi</p>
+      <p>Pooja Patil </p>
+      <p>Kishor Kumar </p>
+     </div>
       
-
-
-
-
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-    <br /><br /><br />
-    <br /><br /><br />
-    <br /><br /><br />
-    <br /><br /><br />
-    <br /><br /><br />
-   </div>
-  
   )
 }
-
-export default About;
-

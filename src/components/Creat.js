@@ -19,7 +19,7 @@ export default function X() {
     } else {
       let title = Title;
 
-      let QuizId = random();
+      let QuizId = (random() + random()) - random();
 
       let id = localStorage.getItem("QuizId");
       if (id == null) {
@@ -52,48 +52,47 @@ export default function X() {
 
   return (
     <>
-      {/* here i am going to creat ui for creat Quiz  */}
+    
 
-      <div className="container border" id="creatQuizUi">
-        <br />
-        <label htmlFor="exampleFormControlTextarea1" className="form-label">
-          <h4 id="Title">Test Title</h4>
-        </label>
-
-        <input
-          className="form-control form-control-sm"
-          type="text"
+      <div className="contai">
+        <div className="boxc">
+          <input
           onChange={TitleName}
-          placeholder=""
-          aria-label=".form-control-sm example"
-        />
+            type="text"
+            id="input"
+            placeholder="Enter Quiz Title Here ....">
 
-        <br />
-        {Test ? (
-          <div >
-            <button onClick={AddTitle} className=" btn btn-success">
-              {" "}
-              Add Title{" "}
-            </button>
-          </div>
-        ) : (
-          <div className="border">
-            <Link to="/Addquestion">
-              <button onClick={AddTitle} className=" btn btn-success">
-                {" "}
-                Add Title{" "}
-              </button>
-            </Link>
-          </div>
-        )}
-
-        <div>
-          <br />
-          <h3>Preview</h3>
-          <p>{Title}</p>
+          </input>
         </div>
-        <br/><br/><br/><br/><br/>
       </div>
+
+
+      <br />
+      {Test ? (
+        <div >
+          <button onClick={AddTitle} className="addBtn">
+
+            Add Title
+          </button>
+        </div>
+      ) : (
+        <div className="border">
+          <Link to="/Addquestion">
+            <button onClick={AddTitle} className="Btnmain">
+
+              Add Title
+            </button>
+          </Link>
+        </div>
+      )}
+
+      <div>
+        <br />
+     
+        <p>{Title}</p>
+      </div>
+      <br /><br /><br /><br /><br />
+
     </>
   );
 }
